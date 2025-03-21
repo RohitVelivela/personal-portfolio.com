@@ -1,6 +1,6 @@
 import { 
   SiPowerbi, SiMicrosoftexcel, SiMicrosoftword, SiMysql, 
-  SiPython, SiMatlab, SiReact
+  SiPython, SiReact
 } from 'react-icons/si';
 import { GiCircuitry } from 'react-icons/gi';
 import { MdOutlineFactory, MdOutlineMonitorHeart } from 'react-icons/md';
@@ -23,14 +23,14 @@ export const skillCategories: SkillCategory[] = [
   {
     name: 'Programming',
     skills: [
-      { name: 'SCADA and HMI Programming', proficiency: 95, icon: () => <MdOutlineFactory className="w-6 h-6" /> },
-      { name: 'Hardware Description Languages', proficiency: 85, icon: () => <GiCircuitry className="w-6 h-6" /> },
-      { name: 'System Verilog', proficiency: 80, icon: () => <GiCircuitry className="w-6 h-6" /> },
-      { name: 'Verilog', proficiency: 85, icon: () => <GiCircuitry className="w-6 h-6" /> },
-      { name: 'Embedded Simulation & Design', proficiency: 80, icon: () => <GiCircuitry className="w-6 h-6" /> },
-      { name: 'MATLAB', proficiency: 75, icon: () => <SiMatlab className="w-6 h-6" /> },
-      { name: 'MASM', proficiency: 70, icon: () => <FiCpu className="w-6 h-6" /> },
-      { name: 'PyCharm', proficiency: 80, icon: () => <SiPython className="w-6 h-6" /> },
+      // { name: 'SCADA and HMI Programming', proficiency: 95, icon: () => <MdOutlineFactory className="w-6 h-6" /> },
+      // { name: 'Hardware Description Languages', proficiency: 85, icon: () => <GiCircuitry className="w-6 h-6" /> },
+      // { name: 'System Verilog', proficiency: 80, icon: () => <GiCircuitry className="w-6 h-6" /> },
+      // { name: 'Verilog', proficiency: 85, icon: () => <GiCircuitry className="w-6 h-6" /> },
+      // { name: 'Embedded Simulation & Design', proficiency: 80, icon: () => <GiCircuitry className="w-6 h-6" /> },
+      // { name: 'MATLAB', proficiency: 75, icon: () => <SiMatlab className="w-6 h-6" /> },
+      // { name: 'MASM', proficiency: 70, icon: () => <FiCpu className="w-6 h-6" /> },
+      // { name: 'PyCharm', proficiency: 80, icon: () => <SiPython className="w-6 h-6" /> },
     ]
   }
 ];
@@ -46,7 +46,6 @@ export const experiences: Experience[] = [
       "Produces monthly reports using advanced Excel spreadsheet functions",
       "Creates various Excel documents to assist with pulling metrics data and presenting information to stakeholders."
     ],
-    icon: () => <FiBarChart2 />,
     iconBackground: "#0a192f"
   }
 ];
@@ -56,16 +55,16 @@ export const socialLinks: SocialLink[] = [
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/ramyashree-velivela",
-    icon: () => <FiLinkedin />
+    // icon: () => <FiLinkedin />
   },
   {
     name: "GitHub",
     url: "https://github.com/ramyashree-velivela",
-    icon: () => <FiGithub />
+    // icon: () => <FiGithub />
   },
   {
     name: "Email",
     url: "mailto:ramyashree.velivela@example.com",
-    icon: () => <FiMail />
+    // icon: () => <FiMail />
   }
 ];

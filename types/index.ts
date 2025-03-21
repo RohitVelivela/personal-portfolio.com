@@ -17,7 +17,7 @@ export interface Experience {
   location: string
   date: string
   description: string[]
-  icon: JSX.Element
+  // icon: JSX.Element
   iconBackground: string
 }
 
@@ -44,7 +44,7 @@ export interface Education {
 export interface SocialLink {
   name: string
   url: string
-  icon: JSX.Element
+  // icon: JSX.Element
 }
 
 export interface NavItem {
