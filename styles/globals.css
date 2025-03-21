@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #1a1a1a;
+  --color-secondary: #64FFDA;
+  --color-background: #0A192F;
+  --color-text: #8892B0;
+  --color-text-light: #CCD6F6;
+  --color-neon: #64FFDA;
+  --color-neon-rgb: 100, 255, 218;
+  --color-cyan: #33CCCC;
+  --color-cyan-rgb: 51, 204, 204;
+  --particle-size: 12px;
+  --particle-glow: 15px;
+  --trail-length: 8;
+}
+
+.dark {
+  --color-primary: #ffffff;
+  --color-secondary: #64FFDA;
+  --color-background: #020C1B;
+  --color-text: #CCD6F6;
+  --color-text-light: #FFFFFF;
+  --color-neon: #64FFDA;
+  --color-neon-rgb: 100, 255, 218;
+  --color-cyan: #33CCCC;
+  --color-cyan-rgb: 51, 204, 204;
+}
+
+@layer components {
+  .cursor-particle {
+    @apply fixed pointer-events-none rounded-full;
+    width: var(--particle-size);
+    height: var(--particle-size);
+    transform: translate(-50%, -50%);
+  }
+
+  .cursor-particle-glow {
+    filter: blur(3px);
+    box-shadow: 0 0 var(--particle-glow) currentColor;
+  }
+
+  .bg-theme {
+    @apply bg-background dark:bg-background-dark;
+  }
+
+  .text-theme {
+    @apply text-text dark:text-text-light;
+  }
+
+  .text-theme-secondary {
+    @apply text-text-dark dark:text-text;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300;
+    text-shadow: 0 0 8px rgb(100 255 218 / 0);
+  }
+
+  .hover-glow:hover {
+    text-shadow: 0 0 8px rgb(100 255 218 / 0.5);
+  }
+
+  .hover\:bg-primary-hover:hover {
+    @apply bg-primary-hover transition-colors duration-300;
+  }
+
+  .nav-link {
+    @apply relative text-text hover:text-neon transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-[-4px] w-0 h-[2px] bg-neon transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+/* Hide cursor effect on mobile/touch devices */
+@media (hover: none) {
+  .cursor-effect {
+    display: none;
+  }
+}
+
+/* ... existing code ... */ 

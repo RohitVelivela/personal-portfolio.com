@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    @apply scroll-smooth;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent/50 rounded-full hover:bg-accent/70;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-text/80 hover:text-accent transition-colors duration-200 relative;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-accent 
+           transition-all duration-300 ease-out;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-hover text-accent px-6 py-2 rounded-lg 
+           transition-all duration-200 font-medium border border-accent/20 
+           hover:border-accent/40 shadow-lg shadow-primary/20 relative
+           overflow-hidden hover:animate-glow;
+  }
+
+  .btn-primary::after {
+    @apply content-[''] absolute inset-0 bg-accent/20 scale-0 rounded-lg
+           transition-transform duration-300 ease-out origin-center;
+  }
+
+  .btn-primary:active::after {
+    @apply scale-100 animate-ripple;
+  }
+
+  .card {
+    @apply bg-primary/30 rounded-lg p-6 backdrop-blur-sm border border-accent/10 
+           hover:border-accent/20 transition-all duration-300 shadow-xl shadow-background/50;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-text mb-6 font-mono relative
+           inline-block;
+  }
+
+  .section-title::after {
+    @apply content-[''] absolute -bottom-2 left-0 w-1/2 h-0.5 bg-accent/50;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-highlight bg-clip-text text-transparent;
+  }
+
+  /* Hero Section Enhancements */
+  .hero-background {
+    @apply relative overflow-hidden bg-grid-pattern before:absolute before:inset-0 
+           before:bg-gradient-to-b before:from-background before:to-primary/50;
+  }
+
+  .hero-content {
+    @apply relative z-10;
+  }
+
+  .typewriter-text {
+    @apply overflow-hidden whitespace-nowrap border-r-2 border-accent 
+           animate-typewriter font-mono;
+  }
+
+  .floating-stats {
+    @apply fixed top-4 right-4 bg-primary/90 rounded-lg p-4 backdrop-blur-sm
+           border border-accent/20 text-sm font-mono animate-float;
+  }
+
+  .stats-number {
+    @apply text-accent font-bold;
+  }
+
+  /* Skills Radar Enhancement */
+  .skills-radar {
+    @apply relative w-full aspect-square max-w-md mx-auto;
+  }
+
+  .radar-background {
+    @apply absolute inset-0 border-2 border-accent/20 rounded-full
+           animate-spin-slow;
+  }
+
+  /* Timeline Enhancements */
+  .timeline-container {
+    @apply relative flex flex-col md:flex-row justify-between;
+  }
+
+  .timeline-container::before {
+    @apply content-[''] absolute left-0 md:left-1/2 top-0 -ml-px md:-translate-x-1/2 
+           h-full w-0.5 bg-accent/20;
+  }
+
+  .timeline-item {
+    @apply relative flex items-center justify-between md:justify-normal 
+           md:even:flex-row-reverse animate-fade-in-up opacity-0;
+  }
+
+  .timeline-item-content {
+    @apply relative bg-primary/30 p-6 rounded-lg shadow-md backdrop-blur-sm 
+           border border-accent/10 hover:border-accent/20 transition-all duration-300;
+    max-width: 500px;
+  }
+
+  .timeline-item-content::before {
+    @apply content-[''] absolute top-1/2 -translate-y-1/2 w-4 h-4 
+           bg-accent rounded-full z-10;
+    left: -8px;
+  }
+
+  .timeline-item:nth-child(even) .timeline-item-content::before {
+    @apply left-auto;
+    right: -8px;
+  }
+
+  /* Social Icons */
+  .social-icon {
+    @apply text-text/70 hover:text-accent transition-colors duration-200
+           relative;
+  }
+
+  .social-tooltip {
+    @apply absolute -top-8 left-1/2 -translate-x-1/2 bg-primary px-2 py-1
+           rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity
+           duration-200 whitespace-nowrap border border-accent/20;
+  }
+
+  /* Live Metrics Widget */
+  .metrics-widget {
+    @apply bg-primary/90 rounded-lg p-4 backdrop-blur-sm border border-accent/20
+           font-mono text-sm grid gap-4;
+  }
+
+  .metric-item {
+    @apply flex items-center gap-2;
+  }
+
+  .metric-value {
+    @apply text-accent font-bold animate-counter;
+  }
+}
